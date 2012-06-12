@@ -5,12 +5,12 @@
 // You can find more on http://lightbasic.com
 //
 // Author: Albert Varaksin
-// Licence: Public Domain.
-// Author of this code will not be held liable nor responsible in any shape or
-// form, directly or indirectly, for whatever issues, losses or damages using
-// this source code might cause you.
+// Licence: Public Domain
+// This code is provided AS IS. The Author will not be held liable or
+// responsible in any shape or form, directly or indirectly, for whatever
+// issues, losses or damages using this code might cause.
 //
-// This code assumes c++11 compatible compiler.
+// This code assumes C++11 compatible compiler.
 
 #include <iostream>
 #include <map>

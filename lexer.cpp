@@ -159,8 +159,8 @@ int main(int argc, const char * argv[])
     // create the lexer object and pass in a very simple expression
     // expression has 2 identifiers (rad, pi), 2 operators (=, /), a number(180)
     // and a comment starting with // and ends with a new line.
-    Lexer lexer("rad = // calculate 1 radii\n"
-                "pi / 180");
+    Lexer lexer("rad = // calculate 1 radian\n"
+                "180 / pi");
     
     // iterate through the tokens until we reach the EndOfInput
     // Expected output from this:

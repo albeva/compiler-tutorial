@@ -1,6 +1,6 @@
 //
 // This is a lexer example from the blog series on
-// How to build a compiler with llvm
+// How to build a compiler with LLVM
 //
 // You can find more on http://lightbasic.com
 //
@@ -49,7 +49,7 @@ struct Token {
 
 
 // Lexer class takes a string literal and breaks it down into
-// individual tokens. It filters out whitespaces, newlines, comments
+// individual tokens. It filters out white spaces, newlines, comments
 // and returns any unexpected input as an Invalid token.
 class Lexer
 {
@@ -78,7 +78,7 @@ public:
             // to point to the next character
             m_start = m_pos++;
             
-            // skip if current character is a whitespace or a new line
+            // skip if current character is a white space or a new line
             if (ch == ' ' || ch == '\n' || ch == '\r' || ch == '\t') continue;
             
             // deal with comments
@@ -122,7 +122,7 @@ private:
     Token identifier()
     {
         // read while position is within the string and
-        // next character is a alpha numberic
+        // next character is a alpha numeric
         while (m_pos < m_source.length() && isalnum(m_source[m_pos])) m_pos++;
         
         // Done. Create new token
@@ -157,10 +157,18 @@ private:
 int main(int argc, const char * argv[])
 {
     // create the lexer object and pass in a very simple expression
-    // consisting of 2 identifiers, 2 operators, a number and a comment
-    Lexer lexer("rad = // calculate 1 radii\n pi / 180");
+    // expression has 2 identifiers (rad, pi), 2 operators (=, /), a number(180)
+    // and a comment starting with // and ends with a new line.
+    Lexer lexer("rad = // calculate 1 radii\n"
+                "pi / 180");
     
     // iterate through the tokens until we reach the EndOfInput
+    // Expected output from this:
+    // Identifier : rad
+    // Assign : =
+    // Identifier : pi
+    // Divide : /
+    // Number : 180
     for (auto t = lexer.next(); t.kind != Kind::EndOfInput; t = lexer.next()) {
         cout << kindMap[t.kind] << " : " << t.value << '\n';
     }

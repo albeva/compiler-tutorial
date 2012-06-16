@@ -81,7 +81,10 @@ public:
             // skip if current character is a white space or a new line
             if (ch == ' ' || ch == '\n' || ch == '\r' || ch == '\t') continue;
             
-            // deal with comments
+            // deal with comments. Comments start with //
+            // so check first that next character exists and is not the end of
+            // source, secondly test that next character is /
+            // (m_pos points to the next character already beacues we incremented it)
             if (ch == '/' && m_pos < len && m_source[m_pos] == '/') {
                 // skip everything until we encounter either end of string
                 // or a new line

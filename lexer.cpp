@@ -10,7 +10,7 @@
 // responsible in any shape or form, directly or indirectly, for whatever
 // issues, losses or damages using this code might cause.
 //
-// This code assumes C++11 compatible compiler.
+// This code requires C++11 compatible compiler.
 
 #include <iostream>
 #include <map>
